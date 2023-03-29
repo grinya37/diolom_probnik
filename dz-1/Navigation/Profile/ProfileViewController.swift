@@ -8,7 +8,6 @@
 import UIKit
 
 class ProfileViewController: UIViewController {
-    private var topInsetView = UIView()
     
     var profileHeaderView = ProfileHeaderView()
     
@@ -16,21 +15,15 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = .lightGray
         navigationItem.title = "Profile"
-        navigationController?.navigationBar.backgroundColor = .blue
+        //navigationController?.navigationBar.backgroundColor = .white
         makeBarItems()
-        topInsetView.backgroundColor = .black
-        view.addSubview(profileHeaderView)
-        view.addSubview(topInsetView)
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
         profileHeaderView.frame = view.bounds
-        
+        view.addSubview(profileHeaderView)
         profileHeaderView.backgroundColor = .lightGray
-        topInsetView.frame = CGRect(x: 0, y: 0,
-                                    width: view.frame.width,
-                                    height: view.safeAreaInsets.top)
     }
     
     private func makeBarItems() {
