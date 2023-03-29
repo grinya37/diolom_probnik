@@ -31,6 +31,17 @@ class ProfileHeaderView: UIView {
     }
     
     
+    private lazy var myTextFields: UITextField = {
+        let myTextFields = UITextField()
+        myTextFields.frame = CGRect(x: 170, y: 170, width: 180, height: 50)
+        myTextFields.borderStyle = .none
+        myTextFields.placeholder = "Waiting for something..."
+        myTextFields.layer.cornerRadius = 30
+        myTextFields.backgroundColor = .lightGray
+        return myTextFields
+    }()
+    
+    
     private var mainButton: UIButton {
         
         let button = UIButton(frame: CGRect(x: 20, y: 255, width: 340, height: 50))
@@ -46,16 +57,7 @@ class ProfileHeaderView: UIView {
         button.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
         return button
     }
-    
-    private lazy var myTextFields: UITextField = {
-        let myTextFields = UITextField()
-        myTextFields.frame = CGRect(x: 170, y: 170, width: 180, height: 50)
-        myTextFields.borderStyle = .none
-        myTextFields.placeholder = "Waiting for something..."
-        myTextFields.layer.cornerRadius = 30
-        myTextFields.backgroundColor = .lightGray
-        return myTextFields
-    }()
+   
     
     
     @objc func buttonPressed() {
@@ -74,8 +76,6 @@ class ProfileHeaderView: UIView {
          super.init(frame: .zero)
         setupUI()
     }
-    
-    
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
