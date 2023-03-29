@@ -9,11 +9,23 @@ import UIKit
 
 class InfoViewController: UIViewController {
     
+    private var topInsetView = UIView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .brown
+        view.backgroundColor = .green
+        topInsetView.backgroundColor = .white
+        view.addSubview(topInsetView)
         backAction()
     }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        topInsetView.frame = CGRect(x: 0, y: 0,
+                                    width: view.frame.width,
+                                    height: view.safeAreaInsets.top)
+    }
+    
     
     @objc private func backAction() {
         let alertController = UIAlertController(title: "Заголовок", message: "Описание", preferredStyle: .alert)
