@@ -18,6 +18,7 @@
 		204FA091299AD16700123E0E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204FA090299AD16700123E0E /* Constants.swift */; };
 		206CE700298932B9008AAFF5 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206CE6FF298932B9008AAFF5 /* Post.swift */; };
 		206CE70229894580008AAFF5 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206CE70129894580008AAFF5 /* InfoViewController.swift */; };
+		20AC3CC729A125FE0027A36B /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AC3CC629A125FE0027A36B /* CustomTextField.swift */; };
 		20EB0ED92992D2FD00FE2A97 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EB0ED82992D2FD00FE2A97 /* ProfileHeaderView.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +36,7 @@
 		204FA090299AD16700123E0E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		206CE6FF298932B9008AAFF5 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		206CE70129894580008AAFF5 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		20AC3CC629A125FE0027A36B /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		20EB0ED82992D2FD00FE2A97 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -119,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				206CE70129894580008AAFF5 /* InfoViewController.swift */,
+				20AC3CC529A125E30027A36B /* Custom */,
 			);
 			path = InfoViewController;
 			sourceTree = "<group>";
@@ -130,6 +133,14 @@
 				2035F582298876F10083D1B7 /* PostViewController.swift */,
 			);
 			path = Post;
+			sourceTree = "<group>";
+		};
+		20AC3CC529A125E30027A36B /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				20AC3CC629A125FE0027A36B /* CustomTextField.swift */,
+			);
+			path = Custom;
 			sourceTree = "<group>";
 		};
 		20EB0ED72992D2D600FE2A97 /* Profile */ = {
@@ -212,6 +223,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2035F583298876F10083D1B7 /* PostViewController.swift in Sources */,
+				20AC3CC729A125FE0027A36B /* CustomTextField.swift in Sources */,
 				2035F581298854FD0083D1B7 /* UITabBarController.swift in Sources */,
 				2035F56929884F680083D1B7 /* AppDelegate.swift in Sources */,
 				2035F57F298853550083D1B7 /* ProfileViewController.swift in Sources */,
