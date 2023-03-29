@@ -9,7 +9,7 @@ import UIKit
 
 class FeedViewController: UIViewController {
   
-   // private let  myPost = Post(title: "My post")
+    private let  myPost = Post(title: "My post")
 
     
     private var topInsetView = UIView()
@@ -33,71 +33,6 @@ class FeedViewController: UIViewController {
         button.backgroundColor = .systemRed
         return button
     }()
-
-    private func setupButton() {
-        view.addSubview(viewPostButton)
-        viewPostButton.center = view.center
-        viewPostButton.addTarget(self, action: #selector(tapEditAction), for: .touchUpInside)
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .systemGroupedBackground
-        navigationItem.title = "Feed"
-        
-        topInsetView.backgroundColor = .white
-        view.addSubview(topInsetView)
-        //setConstraints()
-        makeBarItem()
-        setupStackView()
-    }
-    
-    
-    // верхняя кнопка "Дальше"
-    private func makeBarItem() {
-        let barItem = UIBarButtonItem(title: "Профиль", style: .plain, target: self, action: #selector(barItemAction))
-        navigationItem.rightBarButtonItem = barItem
-    }
-    
-    // переход на экран "Профиль"
-    @objc private func barItemAction() {
-        let profileVC = ProfileViewController()
-        profileVC.title = "Профиль"
-        profileVC.modalPresentationStyle = .fullScreen
-        navigationController?.pushViewController(profileVC, animated: true)
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        topInsetView.frame = CGRect(x: 0, y: 0,
-                                    width: view.frame.width,
-                                    height: view.safeAreaInsets.top)
-        
-    }
-
-    private func setupStackView() {
-        view.addSubview(stackView)
-        view.addSubview(viewPostButton)
-        viewPostButton.center = view.center
-        viewPostButton.addTarget(self, action: #selector(tapEditAction), for: .touchUpInside)
-        //stackView.addArrangedSubview(showPostButton)
-        //stackView.addArrangedSubview(editPostButton)
-    }
-
-    @objc func tapShowAction() {
-            let postVC = PostViewController()
-            navigationController?.pushViewController(postVC, animated: true)
-        }
-
-    @objc func tapEditAction() {
-            let postVC = PostViewController()
-            navigationController?.pushViewController(postVC, animated: true)
-        }
-
-}
-
-
-
 //    private (set) lazy var showPostButton: UIButton = {
 //        let button = UIButton(type: .system)
 //        button.setTitle("Show Post", for: .normal)
@@ -130,9 +65,68 @@ class FeedViewController: UIViewController {
 //    }()
     
     
+    private func setupButton() {
+        view.addSubview(viewPostButton)
+        viewPostButton.center = view.center
+        viewPostButton.addTarget(self, action: #selector(tapEditAction), for: .touchUpInside)
+    }
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = .systemGroupedBackground
+        navigationItem.title = "Feed"
+        
+        topInsetView.backgroundColor = .white
+        view.addSubview(topInsetView)
+        
+        setupStackView()
+        //setConstraints()
+        //makeBarItem()
+    }
+    
+    
+    // верхняя кнопка "Дальше"
+//    private func makeBarItem() {
+//        let barItem = UIBarButtonItem(title: "Профиль", style: .plain, target: self, action: #selector(barItemAction))
+//        navigationItem.rightBarButtonItem = barItem
+//    }
+    
+    // переход на экран "Профиль"
+//    @objc private func barItemAction() {
+//        let profileVC = ProfileViewController()
+//        profileVC.title = "Профиль"
+//        profileVC.modalPresentationStyle = .fullScreen
+//        navigationController?.pushViewController(profileVC, animated: true)
+//    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        topInsetView.frame = CGRect(x: 0, y: 0,
+                                    width: view.frame.width,
+                                    height: view.safeAreaInsets.top)
+        
+    }
 
+    private func setupStackView() {
+        view.addSubview(stackView)
+        view.addSubview(viewPostButton)
+        viewPostButton.center = view.center
+        viewPostButton.addTarget(self, action: #selector(tapEditAction), for: .touchUpInside)
+        //stackView.addArrangedSubview(showPostButton)
+        //stackView.addArrangedSubview(editPostButton)
+    }
 
+    @objc func tapShowAction() {
+            let postVC = PostViewController(myPost: myPost.title)
+            navigationController?.pushViewController(postVC, animated: true)
+        }
+
+    @objc func tapEditAction() {
+            let postVC = PostViewController(myPost: myPost.title)
+            navigationController?.pushViewController(postVC, animated: true)
+        }
+
+}
 
 //extension FeedViewController {
 //

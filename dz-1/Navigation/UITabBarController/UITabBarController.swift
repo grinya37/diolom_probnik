@@ -9,8 +9,8 @@ import UIKit
 
 final class TabBarController: UITabBarController {
     
-    private let feedVC = FeedViewController()
     private let profileVC = ProfileViewController()
+    private let feedVC = FeedViewController()
     private let postVC = PostViewController()
     private let loginVC = LogInViewController()
     
@@ -29,33 +29,7 @@ final class TabBarController: UITabBarController {
         loginVC.tabBarItem.title = "Профиль"
         loginVC.tabBarItem.image = UIImage(systemName: "person.crop.circle")
         
-        viewControllers = [loginController, navigationController]
+        viewControllers = [navigationController, loginController]
     }
 }
 
-
-//
-//final class TabBarController: UITabBarController {
-//
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//        setupTabBarController()
-//    }
-//
-//
-//
-//    private let feedViewController = UINavigationController(rootViewController: FeedViewController())
-//
-//    private let profileViewController = UINavigationController(rootViewController: ProfileViewController())
-//
-//
-//
-//    private func setupTabBarController() {
-//        self.tabBar.backgroundColor = .white
-//        viewControllers = [profileViewController, feedViewController]
-//        feedViewController.tabBarItem.title = "Feed"
-//        feedViewController.tabBarItem.image = TabBarPictures.feedImage
-//        profileViewController.tabBarItem.title = "Profile"
-//        profileViewController.tabBarItem.image = TabBarPictures.profileImage
-//    }
-//}
