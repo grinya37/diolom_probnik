@@ -5,9 +5,10 @@
 //  Created by Николай Гринько on 31.01.2023.
 //
 
-import UIKit
+import Foundation
 
 struct Post {
-    var title: String
+    let title: String
+   
     
 }

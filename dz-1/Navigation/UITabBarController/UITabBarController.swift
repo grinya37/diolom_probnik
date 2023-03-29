@@ -9,6 +9,7 @@ import UIKit
 
 final class TabBarController: UITabBarController {
     
+    
     private let profileVC = ProfileViewController()
     private let feedVC = FeedViewController()
     private let postVC = PostViewController()
@@ -20,6 +21,11 @@ final class TabBarController: UITabBarController {
         setupControllers()
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+    }
+    
+    //MARK: SetupController
     private func setupControllers() {
         let navigationController = UINavigationController(rootViewController: feedVC)
         feedVC.tabBarItem.title = "Лента"
