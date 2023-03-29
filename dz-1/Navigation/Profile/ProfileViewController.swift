@@ -4,7 +4,6 @@
 //
 //  Created by Николай Гринько on 30.01.2023.
 //
-
 import UIKit
 
 final class ProfileViewController: UIViewController {
@@ -31,13 +30,12 @@ final class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //navigationItem.title = "post"
+        navigationItem.title = "post"
         topInsetView.backgroundColor = .systemGray5
         view.addSubview(topInsetView)
         setupLayoutConstraints()
     }
 
-    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         topInsetView.frame = CGRect(x: 0, y: 0,
@@ -45,11 +43,10 @@ final class ProfileViewController: UIViewController {
                                     height: view.safeAreaInsets.top)
     }
     
-    
-    // MARK: Изменена высота на 190, вместо 200, чтобы уменьшить расстояние до "Photos"
     private func setupLayoutConstraints() {
+        
         view.addSubview(myTableView)
-        myTableView.tableHeaderView = ProfileHeaderView(frame: CGRect(x: 0, y: 0, width: myTableView.frame.width, height: 190))
+        myTableView.tableHeaderView = ProfileHeaderView(frame: CGRect(x: 0, y: 0, width: myTableView.frame.width, height: 200))
 
         NSLayoutConstraint.activate([
 
@@ -90,7 +87,6 @@ extension ProfileViewController: UITableViewDataSource {
         }
     }
 
-    
     @objc private func galleryButtonAction() {
         let photosVC = PhotosViewController()
         navigationController?.pushViewController(photosVC, animated: true)
@@ -109,10 +105,7 @@ extension ProfileViewController: UITableViewDataSource {
     }
 }
 
-
 extension ProfileViewController: UITableViewDelegate {
-
-
 
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return indexPath.section == 1
@@ -126,11 +119,7 @@ extension ProfileViewController: UITableViewDelegate {
     }
 }
 
-extension UIView {
-    static var identifier: String {
-        String(describing: self)
-    }
-}
+
 
 
 

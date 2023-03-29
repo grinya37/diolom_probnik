@@ -9,7 +9,7 @@ import UIKit
 
 final class PhotosViewController: UIViewController {
 
-    let photoGallery: [ImageGallery] = PhotoGallery.randomPhotos(with: 33)
+    let photoGallery: [ImageGallery] = PhotoGallery.randomPhotos(with: 30)
 
     //MARK: - Add Collection View
     private let collectionView: UICollectionView = {
@@ -48,13 +48,13 @@ final class PhotosViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-       showNavigationBar()
+        showNavigationBar()
     }
 
     //MARK: - Show Navigation Bar
    private func showNavigationBar() {
        navigationController?.setNavigationBarHidden(false, animated: true)
-       title = "Gallery Photo"
+       title = "Gallery"
        navigationController?.navigationBar.standardAppearance = UINavigationBarAppearance()
        navigationController?.toolbar.backgroundColor = .white
        navigationController?.navigationBar.shadowImage = UIImage()
@@ -65,17 +65,14 @@ final class PhotosViewController: UIViewController {
 //MARK: - Extension UICollectionViewDataSource
 extension PhotosViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        //print(photoGallery.count)
-        return photoGallery.count
+        photoGallery.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoCollectionViewCell.identifier, for: indexPath) as? PhotoCollectionViewCell else {
             return UICollectionViewCell()
         }
-        cell.configure(image:
-                        UIImage(named: photoGallery[indexPath.item].imageName)
-        )
+        cell.colImageView.image = UIImage(named: photoGallery[indexPath.item].imageName)
         return cell
     }
 }
@@ -102,5 +99,4 @@ extension PhotosViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         sideInset
     }
-    
 }
