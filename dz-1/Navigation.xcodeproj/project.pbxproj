@@ -18,6 +18,9 @@
 		206CE700298932B9008AAFF5 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206CE6FF298932B9008AAFF5 /* Post.swift */; };
 		206CE70229894580008AAFF5 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206CE70129894580008AAFF5 /* InfoViewController.swift */; };
 		20AC3CC729A125FE0027A36B /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AC3CC629A125FE0027A36B /* CustomTextField.swift */; };
+		20D8522729ABAB6E00F78A91 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D8522629ABAB6E00F78A91 /* PostTableViewCell.swift */; };
+		20D8522929ABAE1F00F78A91 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D8522829ABAE1F00F78A91 /* Model.swift */; };
+		20D8523029ABC1BE00F78A91 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D8522F29ABC1BE00F78A91 /* UIView+Extension.swift */; };
 		20EB0ED92992D2FD00FE2A97 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EB0ED82992D2FD00FE2A97 /* ProfileHeaderView.swift */; };
 		20F0A2A929A36060001028C8 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F0A2A829A36060001028C8 /* LogInViewController.swift */; };
 		20F0A2B629A4DC6F001028C8 /* CustomUIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F0A2B529A4DC6F001028C8 /* CustomUIColor.swift */; };
@@ -37,6 +40,9 @@
 		206CE6FF298932B9008AAFF5 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		206CE70129894580008AAFF5 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		20AC3CC629A125FE0027A36B /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		20D8522629ABAB6E00F78A91 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		20D8522829ABAE1F00F78A91 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		20D8522F29ABC1BE00F78A91 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		20EB0ED82992D2FD00FE2A97 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		20F0A2A829A36060001028C8 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		20F0A2B529A4DC6F001028C8 /* CustomUIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUIColor.swift; sourceTree = "<group>"; };
@@ -125,6 +131,7 @@
 			children = (
 				206CE6FF298932B9008AAFF5 /* Post.swift */,
 				2035F582298876F10083D1B7 /* PostViewController.swift */,
+				20D8522A29ABC16700F78A91 /* Extension */,
 			);
 			path = Post;
 			sourceTree = "<group>";
@@ -138,11 +145,21 @@
 			path = Custom;
 			sourceTree = "<group>";
 		};
+		20D8522A29ABC16700F78A91 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				20D8522F29ABC1BE00F78A91 /* UIView+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		20EB0ED72992D2D600FE2A97 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
 				20EB0ED82992D2FD00FE2A97 /* ProfileHeaderView.swift */,
+				20D8522829ABAE1F00F78A91 /* Model.swift */,
 				2035F57E298853550083D1B7 /* ProfileViewController.swift */,
+				20D8522629ABAB6E00F78A91 /* PostTableViewCell.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -225,6 +242,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20D8522929ABAE1F00F78A91 /* Model.swift in Sources */,
 				2035F583298876F10083D1B7 /* PostViewController.swift in Sources */,
 				20AC3CC729A125FE0027A36B /* CustomTextField.swift in Sources */,
 				2035F581298854FD0083D1B7 /* UITabBarController.swift in Sources */,
@@ -232,7 +250,9 @@
 				2035F56929884F680083D1B7 /* AppDelegate.swift in Sources */,
 				2035F57F298853550083D1B7 /* ProfileViewController.swift in Sources */,
 				20EB0ED92992D2FD00FE2A97 /* ProfileHeaderView.swift in Sources */,
+				20D8522729ABAB6E00F78A91 /* PostTableViewCell.swift in Sources */,
 				2035F57D2988533D0083D1B7 /* FeedViewController.swift in Sources */,
+				20D8523029ABC1BE00F78A91 /* UIView+Extension.swift in Sources */,
 				20F0A2A929A36060001028C8 /* LogInViewController.swift in Sources */,
 				206CE700298932B9008AAFF5 /* Post.swift in Sources */,
 				206CE70229894580008AAFF5 /* InfoViewController.swift in Sources */,

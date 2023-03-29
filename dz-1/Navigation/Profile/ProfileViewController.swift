@@ -9,81 +9,89 @@ import UIKit
 
 final class ProfileViewController: UIViewController {
     
-    
-    private let profileHeaderView: ProfileHeaderView = {
-        let profileHeaderView = ProfileHeaderView()
-        profileHeaderView.layer.cornerRadius = 5
-        return profileHeaderView
-    }()
-    
     private var topInsetView = UIView()
     
-    
-    private (set) lazy var showStatusButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setTitle("Нажми меня", for: .normal)
-        button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = .systemRed
-        button.layer.shadowOffset = CGSize(width: 2, height: 2)
-        button.layer.cornerRadius = 4
-        button.layer.shadowColor = UIColor.black.cgColor
-        button.layer.shadowOpacity = 0.7
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
+    private var modelStar: [Modelstar] = Modelstar.starArray()
+
+    private lazy var myTableView: UITableView = {
+        let tableView = UITableView(frame: .zero, style: .grouped)
+        tableView.separatorStyle = .none
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.register(PostTableViewCell.self, forCellReuseIdentifier: PostTableViewCell.identifier)
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        return tableView
     }()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemMint
-        setupViews()
-        setConstraints()
-        navigationItem.title = "Profile"
-        navigationController?.navigationBar.backgroundColor = .white
-        
-        
-        topInsetView.backgroundColor = .white
+        setupLayoutConstraints()
+        navigationItem.title = "post"
+        topInsetView.backgroundColor = .systemMint
         view.addSubview(topInsetView)
-        //makeBarItems()
     }
+
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         topInsetView.frame = CGRect(x: 0, y: 0,
                                     width: view.frame.width,
                                     height: view.safeAreaInsets.top)
-        
     }
     
-    private func setupViews() {
-        view.addSubview(profileHeaderView)
-        view.addSubview(showStatusButton)
+    private func setupLayoutConstraints() {
+        view.addSubview(myTableView)
+        myTableView.tableHeaderView = ProfileHeaderView(frame: CGRect(x: 0, y: 0, width: myTableView.frame.width, height: 210))
+
+        NSLayoutConstraint.activate([
+
+            myTableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            myTableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            myTableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            myTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+        ])
     }
-    
-//        private func makeBarItems() {
-//            let barItem = UIBarButtonItem(title: "👉", style: .plain, target: self, action: #selector(barItemAction))
-//            navigationItem.rightBarButtonItem = barItem
-//        }
-//        @objc private func barItemAction() {
-//            let infoVC = InfoViewController()
-//            infoVC.title = "feedVC"
-//            infoVC.modalPresentationStyle = .fullScreen
-//            navigationController?.pushViewController(infoVC, animated: true)
-//        }
-        
-        private func setConstraints() {
-            profileHeaderView.translatesAutoresizingMaskIntoConstraints = false
-            showStatusButton.translatesAutoresizingMaskIntoConstraints = false
-            NSLayoutConstraint.activate([
-                profileHeaderView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-                profileHeaderView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 0),
-                profileHeaderView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: 0),
-                profileHeaderView.heightAnchor.constraint(equalToConstant: 200),
-                
-                showStatusButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-                showStatusButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 0),
-                showStatusButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: 0),
-                showStatusButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-                showStatusButton.heightAnchor.constraint(equalToConstant: 50)
-            ])
+}
+
+extension ProfileViewController: UITableViewDataSource {
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        modelStar.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: PostTableViewCell.identifier, for: indexPath) as! PostTableViewCell
+        cell.setupCell(model: modelStar[indexPath.row])
+        return cell
+    }
+}
+
+extension ProfileViewController: UITableViewDelegate {
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            modelStar.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
+}
+
+
+
+
+
+
+
+
+
+
+

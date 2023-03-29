@@ -80,7 +80,7 @@ final class LogInViewController: UIViewController {
 
     private (set) lazy var logInButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Login", for: .normal)
+        button.setTitle("Log In", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.setBackgroundImage(UIImage(named: "blue_pixel"), for: .normal)
         button.layer.cornerRadius = 10
@@ -196,7 +196,6 @@ final class LogInViewController: UIViewController {
     @objc private func keyboardWillHide() {
         scrollView.contentInset = .zero
         scrollView.verticalScrollIndicatorInsets = .zero
-        
     }
 }
 
