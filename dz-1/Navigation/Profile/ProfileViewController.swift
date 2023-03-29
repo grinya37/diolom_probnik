@@ -39,10 +39,11 @@ final class ProfileViewController: UIViewController {
         setConstraints()
         navigationItem.title = "Profile"
         navigationController?.navigationBar.backgroundColor = .white
-        topInsetView.backgroundColor = .blue
+        
+        
+        topInsetView.backgroundColor = .white
         view.addSubview(topInsetView)
-        
-        
+        //makeBarItems()
     }
     
     override func viewDidLayoutSubviews() {

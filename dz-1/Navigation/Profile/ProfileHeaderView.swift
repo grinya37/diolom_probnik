@@ -45,7 +45,7 @@ class ProfileHeaderView: UIView {
         let label = UILabel()
         label.text = "Waiting for something..."
         label.textColor = .systemIndigo
-        label.font = UIFont.systemFont(ofSize: 16, weight: .regular)
+        label.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         label.adjustsFontSizeToFitWidth = true
         label.minimumScaleFactor = 0.7
         label.numberOfLines = 2
