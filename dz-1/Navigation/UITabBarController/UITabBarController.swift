@@ -16,7 +16,7 @@ final class TabBarController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = .systemGray5
         setupControllers()
     }
     
@@ -29,7 +29,7 @@ final class TabBarController: UITabBarController {
         loginVC.tabBarItem.title = "Профиль"
         loginVC.tabBarItem.image = UIImage(systemName: "person.crop.circle")
         
-        viewControllers = [navigationController, loginController]
+        viewControllers = [loginController, navigationController]
     }
 }
 

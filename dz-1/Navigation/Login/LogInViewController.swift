@@ -196,6 +196,7 @@ final class LogInViewController: UIViewController {
     @objc private func keyboardWillHide() {
         scrollView.contentInset = .zero
         scrollView.verticalScrollIndicatorInsets = .zero
+        
     }
 }
 
