@@ -1,5 +1,5 @@
 //
-//  PhotosTableViewCell.swift
+//  PhotoTableViewCell.swift
 //  Navigation
 //
 //  Created by Николай Гринько on 28.02.2023.
@@ -77,7 +77,7 @@ class PhotosTableViewCell: UITableViewCell {
         return imageView
     }()
 
-
+    //MARK: -
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupLayoutConstraints()
