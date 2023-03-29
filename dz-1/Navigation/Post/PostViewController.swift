@@ -50,5 +50,4 @@ class PostViewController: UIViewController {
                infoVC.modalPresentationStyle = .fullScreen
                navigationController?.pushViewController(infoVC, animated: true)
            }
-    
 }
