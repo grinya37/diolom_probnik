@@ -20,6 +20,28 @@
 		206CE700298932B9008AAFF5 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206CE6FF298932B9008AAFF5 /* Post.swift */; };
 		206CE70229894580008AAFF5 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206CE70129894580008AAFF5 /* InfoViewController.swift */; };
 		2083AE7129D0D6A700D84950 /* ProfileSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2083AE7029D0D6A700D84950 /* ProfileSectionModel.swift */; };
+		20B3BE9B29EEC9A9003C7C5D /* Modelstar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D8522829ABAE1F00F78A91 /* Modelstar.swift */; };
+		20B3BE9C29EEC9A9003C7C5D /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2035F582298876F10083D1B7 /* PostViewController.swift */; };
+		20B3BE9D29EEC9A9003C7C5D /* UITabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2035F580298854FD0083D1B7 /* UITabBarController.swift */; };
+		20B3BE9E29EEC9A9003C7C5D /* PhotosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E36F7229ADF6E20000C7DB /* PhotosTableViewCell.swift */; };
+		20B3BE9F29EEC9A9003C7C5D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2035F56829884F680083D1B7 /* AppDelegate.swift */; };
+		20B3BEA029EEC9A9003C7C5D /* ProfileSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2083AE7029D0D6A700D84950 /* ProfileSectionModel.swift */; };
+		20B3BEA129EEC9A9003C7C5D /* ImageGallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E36F7829AE04950000C7DB /* ImageGallery.swift */; };
+		20B3BEA229EEC9A9003C7C5D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2035F57E298853550083D1B7 /* ProfileViewController.swift */; };
+		20B3BEA329EEC9A9003C7C5D /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EB0ED82992D2FD00FE2A97 /* ProfileHeaderView.swift */; };
+		20B3BEA429EEC9A9003C7C5D /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E36F7629AE044C0000C7DB /* PhotosViewController.swift */; };
+		20B3BEA629EEC9A9003C7C5D /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2035F57C2988533D0083D1B7 /* FeedViewController.swift */; };
+		20B3BEA729EEC9A9003C7C5D /* DetailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203FE8E429C88A1300F34CDC /* DetailedViewController.swift */; };
+		20B3BEA829EEC9A9003C7C5D /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D8522F29ABC1BE00F78A91 /* UIView+Extension.swift */; };
+		20B3BEA929EEC9A9003C7C5D /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2053583D29C9CEE500E91432 /* CollectionViewCell.swift */; };
+		20B3BEAA29EEC9A9003C7C5D /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F0A2A829A36060001028C8 /* LogInViewController.swift */; };
+		20B3BEAB29EEC9A9003C7C5D /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206CE6FF298932B9008AAFF5 /* Post.swift */; };
+		20B3BEAC29EEC9A9003C7C5D /* PhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E36F7429AE00C90000C7DB /* PhotosCollectionViewCell.swift */; };
+		20B3BEAD29EEC9A9003C7C5D /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206CE70129894580008AAFF5 /* InfoViewController.swift */; };
+		20B3BEAE29EEC9A9003C7C5D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2035F56A29884F680083D1B7 /* SceneDelegate.swift */; };
+		20B3BEB129EEC9A9003C7C5D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2035F57329884F690083D1B7 /* LaunchScreen.storyboard */; };
+		20B3BEB229EEC9A9003C7C5D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2035F57129884F690083D1B7 /* Assets.xcassets */; };
+		20B3BEBB29EECAF8003C7C5D /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B3BEB929EECAA7003C7C5D /* StorageService.swift */; };
 		20D8522729ABAB6E00F78A91 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D8522629ABAB6E00F78A91 /* PostTableViewCell.swift */; };
 		20D8522929ABAE1F00F78A91 /* Modelstar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D8522829ABAE1F00F78A91 /* Modelstar.swift */; };
 		20D8523029ABC1BE00F78A91 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D8522F29ABC1BE00F78A91 /* UIView+Extension.swift */; };
@@ -47,6 +69,9 @@
 		206CE6FF298932B9008AAFF5 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		206CE70129894580008AAFF5 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		2083AE7029D0D6A700D84950 /* ProfileSectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSectionModel.swift; sourceTree = "<group>"; };
+		20B3BEB629EEC9A9003C7C5D /* StorageService-Debug-Free.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "StorageService-Debug-Free.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		20B3BEB729EEC9AA003C7C5D /* StorageService-Debug-Free-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "StorageService-Debug-Free-Info.plist"; path = "/Users/nikolajgrinko/Desktop/Мои личные проекты/Домащнее задание НЕТОЛОГИЯ/diplom_probnik/dz-1/StorageService-Debug-Free-Info.plist"; sourceTree = "<absolute>"; };
+		20B3BEB929EECAA7003C7C5D /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		20D8522629ABAB6E00F78A91 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		20D8522829ABAE1F00F78A91 /* Modelstar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modelstar.swift; sourceTree = "<group>"; };
 		20D8522F29ABC1BE00F78A91 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
@@ -66,6 +91,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		20B3BEAF29EEC9A9003C7C5D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -73,7 +105,9 @@
 			isa = PBXGroup;
 			children = (
 				2035F56729884F680083D1B7 /* Navigation */,
+				20B3BEB829EECA90003C7C5D /* StorageService */,
 				2035F56629884F680083D1B7 /* Products */,
+				20B3BEB729EEC9AA003C7C5D /* StorageService-Debug-Free-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				2035F56529884F680083D1B7 /* Navigation.app */,
+				20B3BEB629EEC9A9003C7C5D /* StorageService-Debug-Free.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -168,6 +203,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		20B3BEB829EECA90003C7C5D /* StorageService */ = {
+			isa = PBXGroup;
+			children = (
+				20B3BEB929EECAA7003C7C5D /* StorageService.swift */,
+			);
+			path = StorageService;
+			sourceTree = "<group>";
+		};
 		20D8522A29ABC16700F78A91 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -207,6 +250,23 @@
 			productReference = 2035F56529884F680083D1B7 /* Navigation.app */;
 			productType = "com.apple.product-type.application";
 		};
+		20B3BE9929EEC9A9003C7C5D /* StorageService-Debug-Free */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 20B3BEB329EEC9A9003C7C5D /* Build configuration list for PBXNativeTarget "StorageService-Debug-Free" */;
+			buildPhases = (
+				20B3BE9A29EEC9A9003C7C5D /* Sources */,
+				20B3BEAF29EEC9A9003C7C5D /* Frameworks */,
+				20B3BEB029EEC9A9003C7C5D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "StorageService-Debug-Free";
+			productName = Navigation;
+			productReference = 20B3BEB629EEC9A9003C7C5D /* StorageService-Debug-Free.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -236,6 +296,7 @@
 			projectRoot = "";
 			targets = (
 				2035F56429884F680083D1B7 /* Navigation */,
+				20B3BE9929EEC9A9003C7C5D /* StorageService-Debug-Free */,
 			);
 		};
 /* End PBXProject section */
@@ -247,6 +308,15 @@
 			files = (
 				2035F57529884F690083D1B7 /* LaunchScreen.storyboard in Resources */,
 				2035F57229884F690083D1B7 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		20B3BEB029EEC9A9003C7C5D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20B3BEB129EEC9A9003C7C5D /* LaunchScreen.storyboard in Resources */,
+				20B3BEB229EEC9A9003C7C5D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,6 +347,33 @@
 				20E36F7529AE00C90000C7DB /* PhotosCollectionViewCell.swift in Sources */,
 				206CE70229894580008AAFF5 /* InfoViewController.swift in Sources */,
 				2035F56B29884F680083D1B7 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		20B3BE9A29EEC9A9003C7C5D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20B3BE9B29EEC9A9003C7C5D /* Modelstar.swift in Sources */,
+				20B3BE9C29EEC9A9003C7C5D /* PostViewController.swift in Sources */,
+				20B3BE9D29EEC9A9003C7C5D /* UITabBarController.swift in Sources */,
+				20B3BE9E29EEC9A9003C7C5D /* PhotosTableViewCell.swift in Sources */,
+				20B3BE9F29EEC9A9003C7C5D /* AppDelegate.swift in Sources */,
+				20B3BEBB29EECAF8003C7C5D /* StorageService.swift in Sources */,
+				20B3BEA029EEC9A9003C7C5D /* ProfileSectionModel.swift in Sources */,
+				20B3BEA129EEC9A9003C7C5D /* ImageGallery.swift in Sources */,
+				20B3BEA229EEC9A9003C7C5D /* ProfileViewController.swift in Sources */,
+				20B3BEA329EEC9A9003C7C5D /* ProfileHeaderView.swift in Sources */,
+				20B3BEA429EEC9A9003C7C5D /* PhotosViewController.swift in Sources */,
+				20B3BEA629EEC9A9003C7C5D /* FeedViewController.swift in Sources */,
+				20B3BEA729EEC9A9003C7C5D /* DetailedViewController.swift in Sources */,
+				20B3BEA829EEC9A9003C7C5D /* UIView+Extension.swift in Sources */,
+				20B3BEA929EEC9A9003C7C5D /* CollectionViewCell.swift in Sources */,
+				20B3BEAA29EEC9A9003C7C5D /* LogInViewController.swift in Sources */,
+				20B3BEAB29EEC9A9003C7C5D /* Post.swift in Sources */,
+				20B3BEAC29EEC9A9003C7C5D /* PhotosCollectionViewCell.swift in Sources */,
+				20B3BEAD29EEC9A9003C7C5D /* InfoViewController.swift in Sources */,
+				20B3BEAE29EEC9A9003C7C5D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,6 +559,62 @@
 			};
 			name = Release;
 		};
+		20B3BEB429EEC9A9003C7C5D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W2P9X4349P;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "StorageService-Debug-Free-Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_SWIFT_FLAGS = "-D Free";
+				PRODUCT_BUNDLE_IDENTIFIER = "grinkonikolka-yandex.ru.Navigation";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		20B3BEB529EEC9A9003C7C5D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W2P9X4349P;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "StorageService-Debug-Free-Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_SWIFT_FLAGS = "-D Free";
+				PRODUCT_BUNDLE_IDENTIFIER = "grinkonikolka-yandex.ru.Navigation";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -479,6 +632,15 @@
 			buildConfigurations = (
 				2035F57A29884F690083D1B7 /* Debug */,
 				2035F57B29884F690083D1B7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		20B3BEB329EEC9A9003C7C5D /* Build configuration list for PBXNativeTarget "StorageService-Debug-Free" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				20B3BEB429EEC9A9003C7C5D /* Debug */,
+				20B3BEB529EEC9A9003C7C5D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

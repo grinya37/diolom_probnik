@@ -1,8 +1,8 @@
 //
-//  StorageService.swift
+//  PostTableViewCell.swift
 //  Navigation
 //
-//  Created by Николай Гринько on 18.04.2023.
+//  Created by Николай Гринько on 26.02.2023.
 //
 
 import UIKit

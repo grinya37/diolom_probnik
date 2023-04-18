@@ -1,39 +1,51 @@
 //
-//  StorageService.swift
+//  DetailedViewController.swift
 //  Navigation
 //
-//  Created by Николай Гринько on 18.04.2023.
+//  Created by Николай Гринько on 20.03.2023.
 //
-
 import UIKit
 
-
-final class PostTableViewCell: UITableViewCell {
+final class DetailedViewController: UIViewController {
+    
     var onLikeTapped: ((Int, IndexPath) -> ())?
     var onEyeTapped: ((Int, IndexPath) -> ())?
     
-    //MARK: - Add authorLabel
-    private lazy var authorLabel: UILabel = {
-        let label = UILabel()
-        label.numberOfLines = 2
+    //MARK: Add scrollView
+    private  lazy var scrollView: UIScrollView = {
+        let view = UIScrollView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+
+    //MARK: Add contentView
+    private let contentView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+
+    //MARK: Add authorLabel
+    lazy var authorLabel: UILabel = {
+        let label = UILabel(frame: .zero)
         label.font = UIFont.systemFont(ofSize: 20, weight: .bold)
         label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-    
-    //MARK: - Add myImageView
-    private lazy var myImageView: UIImageView = {
-        let view = UIImageView()
-        view.backgroundColor = .black
-        view.contentMode = .scaleAspectFill
-        view.clipsToBounds = true
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
+
+    //MARK: Add myImageView
+    lazy var myImageView: UIImageView = {
+        let image = UIImageView()
+        image.backgroundColor = .white
+        image.contentMode = .scaleAspectFill
+        image.clipsToBounds = true
+        image.translatesAutoresizingMaskIntoConstraints = false
+        return image
     }()
-    
-    //MARK: - Add descriptionLabel
-    private lazy var descriptionLabel: UILabel = {
+
+    //MARK: Add descriptionLabel
+    lazy var descriptionLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 14, weight: .regular)
         label.textColor = UIColor.black
@@ -42,9 +54,9 @@ final class PostTableViewCell: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-    
-    //MARK: - Add likesLabel
-    private lazy var likesLabel: UILabel = {
+
+    //MARK: Add likesLabel
+    lazy var likesLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 16, weight: .regular)
         label.textColor = UIColor.black
@@ -52,9 +64,9 @@ final class PostTableViewCell: UITableViewCell {
         label.isUserInteractionEnabled = true
         return label
     }()
-    
-    //MARK: - Add viewsLabel
-    private lazy var viewsLabel: UILabel = {
+
+    //MARK: Add viewsLabel
+    lazy var viewsLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 16, weight: .regular)
         label.textColor = UIColor.black
@@ -62,55 +74,41 @@ final class PostTableViewCell: UITableViewCell {
         return label
     }()
     
-    //MARK: heartImage
+    //MARK: Add heartImage
     private let heartImage: UIImageView = {
         let heartImage = UIImageView(image: UIImage(systemName: "suit.heart.fill"))
+
         heartImage.tintColor = .systemGray
         heartImage.contentMode = .scaleAspectFit
         heartImage.translatesAutoresizingMaskIntoConstraints = false
         return heartImage
     }()
     
-    //MARK: eyeImage
+    //MARK: Add eyeImage
     private let eyeImage: UIImageView = {
         let heartImage = UIImageView(image: UIImage(systemName: "eye.fill"))
-        heartImage.tintColor = .systemGray
+        heartImage.tintColor = .systemPink
         heartImage.contentMode = .scaleAspectFit
         heartImage.translatesAutoresizingMaskIntoConstraints = false
         return heartImage
     }()
- 
     
-    var viewsCount: Int? {
-        didSet {
-            viewsLabel.text = "Views: \(viewsCount ?? 0 )"
-        }
-    }
-
-    var likesCount: Int? {
-        didSet {
-            likesLabel.text = "Likes: \(likesCount ?? 0 )"
-        }
-    }
-    
-    
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        backgroundColor = UIColor.black
-        setupLayout()
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupLayoutConstraints()
         setupTapGesture()
+        view.backgroundColor = UIColor.white
+        title = "Description"
+        navigationController?.setNavigationBarHidden(false, animated: true)
+        
     }
     
-    required init?(coder: NSCoder) {
-        fatalError()
-    }
     
     private var isHeartSelected = false
     private var isEyeSelected = false
     private var indexPath = IndexPath(index:0)
-   
     
-    //MARK: configureCell
+    
     func configureCell(model: Modelstar, indexPath: IndexPath) {
         authorLabel.text = model.author
         myImageView.image = UIImage(named: model.image)
@@ -120,11 +118,10 @@ final class PostTableViewCell: UITableViewCell {
         isHeartSelected = model.isLiked
         isEyeSelected = model.eyeViews
         heartImage.tintColor = model.isLiked ? .systemPink : .systemGray
-        viewsCount = model.views
-        likesCount = model.likes
+        //viewsCount = model.views
+        //likesCount = model.likes
         self.indexPath = indexPath
     }
-    
     
     //MARK: setupTapGesture
     private func setupTapGesture() {
@@ -189,53 +186,69 @@ final class PostTableViewCell: UITableViewCell {
     }
 
     
-    //MARK: - setupLayout
-    private func setupLayout() {
+    
+    //MARK: - Setup LayoutConstraints
+    private func setupLayoutConstraints() {
+
+         let screenWidth = UIScreen.main.bounds.width
         
-        [myImageView,
-         authorLabel,
-         descriptionLabel,
-         likesLabel,
-         heartImage,
-         eyeImage,
-         viewsLabel].forEach { contentView.addSubview( $0 ) }
-        contentView.backgroundColor = .systemGray5
-        contentView.layer.borderWidth = 0
-        let inset: CGFloat = 16
-
+        view.addSubview(scrollView)
+        scrollView.addSubview(contentView)
+        contentView.addSubview(authorLabel)
+        scrollView.addSubview(myImageView)
+        contentView.addSubview(descriptionLabel)
+        contentView.addSubview(likesLabel)
+        contentView.addSubview(viewsLabel)
+        contentView.addSubview(heartImage)
+        contentView.addSubview(eyeImage)
+        
         NSLayoutConstraint.activate([
-            authorLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: inset),
-            authorLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: inset),
-            authorLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -inset),
 
-            myImageView.topAnchor.constraint(equalTo: authorLabel.bottomAnchor, constant: inset),
-            myImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: -0.5),
-            myImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 0.5),
-            myImageView.heightAnchor.constraint(equalToConstant: 300),
+            scrollView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            scrollView.widthAnchor.constraint(equalTo: view.widthAnchor),
+            scrollView.topAnchor.constraint(equalTo: view.topAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
 
-            descriptionLabel.topAnchor.constraint(equalTo: myImageView.bottomAnchor, constant: inset),
-            descriptionLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: inset),
-            descriptionLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -inset),
+            contentView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
+            contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
+            contentView.topAnchor.constraint(equalTo: scrollView.topAnchor),
+            contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
 
-            likesLabel.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 30),
-            likesLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 30),
-            likesLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -30),
+            authorLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            authorLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
+            authorLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16),
+            authorLabel.bottomAnchor.constraint(equalTo: myImageView.topAnchor, constant: -16),
 
+            myImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            myImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            myImageView.heightAnchor.constraint(equalToConstant: screenWidth),
+
+            descriptionLabel.topAnchor.constraint(equalTo: myImageView.bottomAnchor, constant: 16),
+            descriptionLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
+            descriptionLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            descriptionLabel.bottomAnchor.constraint(equalTo: likesLabel.topAnchor, constant: -16),
+
+            likesLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 36),
+            likesLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16),
+            
             heartImage.centerYAnchor.constraint(equalTo: likesLabel.centerYAnchor),
             heartImage.leadingAnchor.constraint(equalTo: likesLabel.leadingAnchor, constant: -22),
             heartImage.widthAnchor.constraint(equalToConstant: 20),
             heartImage.heightAnchor.constraint(equalToConstant: 20),
-
+            
+            viewsLabel.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 16),
+            viewsLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
+            
             eyeImage.centerYAnchor.constraint(equalTo: viewsLabel.centerYAnchor),
             eyeImage.leadingAnchor.constraint(equalTo: viewsLabel.leadingAnchor, constant: -22),
             
             eyeImage.widthAnchor.constraint(equalToConstant: 20),
             eyeImage.heightAnchor.constraint(equalToConstant: 20),
             
-            viewsLabel.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: inset),
-            viewsLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -inset),
-            viewsLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -inset),
         ])
     }
 }
+
+
+
 
