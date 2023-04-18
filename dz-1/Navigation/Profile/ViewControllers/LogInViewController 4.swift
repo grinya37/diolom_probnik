@@ -11,8 +11,8 @@ import UIKit
 final class LogInViewController: UIViewController {
 
     private let notificationCenter = NotificationCenter.default
-    private let email = ""
-    private let password = ""
+    private let email = "volf@yandex.ru"
+    private let password = "grinya37"
     
     //login - volf@yandex.ru
     //password - grinya37
@@ -248,11 +248,11 @@ final class LogInViewController: UIViewController {
     //MARK: Keyboard display
     @objc private func keyboardShow(notification: NSNotification) {
 
-//        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-//            let size = view.frame.height - keyboardSize.height
-//            scrollView.contentOffset = CGPoint(x: 0, y: loginButton.frame.origin.y - size + 100)
-//            scrollView.verticalScrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: keyboardSize.height, right: 0)
-//        }
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            let size = view.frame.height - keyboardSize.height
+            scrollView.contentOffset = CGPoint(x: 0, y: loginButton.frame.origin.y - size + 100)
+            scrollView.verticalScrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: keyboardSize.height, right: 0)
+        }
     }
 
     //MARK: Hiding the keyboard

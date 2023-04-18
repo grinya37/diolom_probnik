@@ -16,26 +16,6 @@ final class ProfileViewController: UIViewController {
     
     
     //MARK: myTableView
-//    private lazy var myTableView: UITableView = {
-//        let tableView = UITableView(frame: .zero, style: .grouped)
-//        tableView.separatorStyle = .singleLine
-//        tableView.separatorColor = .black
-//        tableView.separatorInset = .init(top: 0, left: 0, bottom: 0, right: 0)
-//        tableView.sectionHeaderTopPadding = .zero
-//        tableView.sectionHeaderHeight = .zero
-//        tableView.sectionFooterHeight = .zero
-//        tableView.backgroundColor = UIColor.systemGray6
-//        tableView.dataSource = self
-//        tableView.delegate = self
-//        tableView.rowHeight = UITableView.noIntrinsicMetric
-//        tableView.register(PhotosTableViewCell.self, forCellReuseIdentifier: PhotosTableViewCell.identifier)
-//        tableView.register(PostTableViewCell.self, forCellReuseIdentifier: PostTableViewCell.identifier)
-//        tableView.translatesAutoresizingMaskIntoConstraints = false
-//        return tableView
-//    }()
-    
-    
-#if DEBUG
     private lazy var myTableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
         tableView.separatorStyle = .singleLine
@@ -44,7 +24,7 @@ final class ProfileViewController: UIViewController {
         tableView.sectionHeaderTopPadding = .zero
         tableView.sectionHeaderHeight = .zero
         tableView.sectionFooterHeight = .zero
-        tableView.backgroundColor = UIColor.green
+        tableView.backgroundColor = UIColor.systemGray6
         tableView.dataSource = self
         tableView.delegate = self
         tableView.rowHeight = UITableView.noIntrinsicMetric
@@ -53,25 +33,6 @@ final class ProfileViewController: UIViewController {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
-#else
-    private lazy var myTableView: UITableView = {
-        let tableView = UITableView(frame: .zero, style: .grouped)
-        tableView.separatorStyle = .singleLine
-        tableView.separatorColor = .black
-        tableView.separatorInset = .init(top: 0, left: 0, bottom: 0, right: 0)
-        tableView.sectionHeaderTopPadding = .zero
-        tableView.sectionHeaderHeight = .zero
-        tableView.sectionFooterHeight = .zero
-        tableView.backgroundColor = UIColor.systemPink
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.rowHeight = UITableView.noIntrinsicMetric
-        tableView.register(PhotosTableViewCell.self, forCellReuseIdentifier: PhotosTableViewCell.identifier)
-        tableView.register(PostTableViewCell.self, forCellReuseIdentifier: PostTableViewCell.identifier)
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        return tableView
-    }()
-#endif
     
     override func viewDidLoad() {
         super.viewDidLoad()
